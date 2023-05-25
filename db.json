@@ -1,0 +1,104 @@
+{
+  "videos": [
+    {
+      "id": 1,
+      "img": "imagenMiniaturaVideo",
+      "title": "Cuándo usar let, var y const?",
+      "category": "Frontend",
+      "link": "https://www.youtube.com/watch?v=PztCEdIJITY",
+      "thumbnail": "https://img.youtube.com/vi/PztCEdIJITY/sddefault.jpg",
+      "description": "Este es un video para definir y saber los conceptos sobre const, let y var."
+    },
+    {
+      "id": 2,
+      "img": "imagenMiniaturaVideo",
+      "title": "¿Qué es SQL y NoSQL?",
+      "category": "Backend",
+      "link": "https://www.youtube.com/watch?v=cLLKVd5CNLc",
+      "thumbnail": "https://img.youtube.com/vi/cLLKVd5CNLc/sddefault.jpg",
+      "description": "Este es un video para definir y saber los conceptos sobre const, let y var."
+    },
+    {
+      "id": 3,
+      "img": "imagenMiniaturaVideo",
+      "title": "¿Qué son las Soft Skills?",
+      "category": "Innovación y gestión",
+      "link": "https://www.youtube.com/watch?v=vhwspfvI52k",
+      "thumbnail": "https://img.youtube.com/vi/vhwspfvI52k/sddefault.jpg",
+      "description": "Este es un video para definir y saber los conceptos sobre const, let y var."
+    },
+    {
+      "id": 4,
+      "img": "imagenMiniaturaVideo",
+      "title": "¿Cómo un desarrollador Front End utiliza el Figma? ",
+      "category": "Diseño web",
+      "link": "https://www.youtube.com/watch?v=UuAX5azcvDQ",
+      "thumbnail": "https://img.youtube.com/vi/UuAX5azcvDQ/sddefault.jpg",
+      "description": "Este es un video para definir y saber los conceptos sobre const, let y var."
+    },
+    {
+      "title": "¿Cómo es el día a día de un desarrollador Front End?",
+      "link": "https://www.youtube.com/watch?v=rf7Yb1INgtQ&t=2230s",
+      "thumbnail": "https://img.youtube.com/vi/rf7Yb1INgtQ/sddefault.jpg",
+      "category": "Frontend",
+      "description": "Para ser un buen profesional es necesario estar siempre actualizándose y en esta Live de Cafe Punto Tech, los desarrolladores de Front End Harland Lohora, Salvador Emmanuel y Juan Pablo Inzunza explicarán cómo es el día a día de este puesto en la tecnología.",
+      "id": 5
+    },
+    {
+      "title": "Consejos de CSS FlexBox para comenzar",
+      "link": "https://www.youtube.com/watch?v=EB4vWLzfVcI",
+      "thumbnail": "https://img.youtube.com/vi/EB4vWLzfVcI/sddefault.jpg",
+      "category": "Frontend",
+      "description": "En esta nueva edición de Alura + aprenderemos un poco más sobre los primeros pasos para empezar a trabajar con Flexbox en CSS y conoceremos las principales etiquetas y cómo aplicarlas.\n",
+      "id": 6
+    },
+    {
+      "title": "¿Qué es JavaScript?",
+      "link": "https://www.youtube.com/watch?v=GJfOSoaXk4s",
+      "thumbnail": "https://img.youtube.com/vi/GJfOSoaXk4s/sddefault.jpg",
+      "category": "Frontend",
+      "description": "JavaScript: ¿qué es y cómo se hizo este lenguaje que genera muchas discusiones y debates entre la gente del área de desarrollo? Genesys y Gabriela nos hablan exactamente de esto en este Alura Tips.\n",
+      "id": 7
+    },
+    {
+      "title": "Café Punto Tech | ¿Cómo elegir entre Frontend y Backend?",
+      "link": "https://www.youtube.com/watch?v=19x46ZQD49A",
+      "thumbnail": "https://img.youtube.com/vi/19x46ZQD49A/sddefault.jpg",
+      "category": "Frontend",
+      "description": "El próximo miércoles (30/11/22) tendremos un nuevo episodio de la nueva temporada de Café Punto Tech, y tenemos invitados especiales, la moderadora Génesys Rondón hablará con nuestra instructora Ellen Pimentel y nuestro instructor José Gonzalez para orientarte y darte consejos para decidir cuál de estas dos profesiones emprender y cuál se adapta a las preferencias y habilidades naturales de cada uno.\n\n",
+      "id": 8
+    },
+    {
+      "title": "Desmistificando el Back-End",
+      "link": "https://www.youtube.com/watch?v=LLt7FreeHfQ",
+      "thumbnail": "https://img.youtube.com/vi/LLt7FreeHfQ/sddefault.jpg",
+      "category": "Backend",
+      "description": "¿Qué es backend?  ¿Por qué debería comenzar mi carrera con backend? \n¿Cuáles son las skills necesarias para ser un buen desarrollador backend? \n¿Qué hace un desarrollador backend en su dia a dia laboral?",
+      "id": 9
+    },
+    {
+      "title": "De Front End a Back End con Java",
+      "link": "https://www.youtube.com/watch?v=3aK3Omo2RrU",
+      "thumbnail": "https://img.youtube.com/vi/3aK3Omo2RrU/sddefault.jpg",
+      "category": "Backend",
+      "description": "En este Alura.tips nuestra instructora Genesys Rondon nos comentará un poco de como fue su experiencia dejando de trabajar con JavaScript y empezando a trabajar con Java.\n",
+      "id": 10
+    },
+    {
+      "title": "¿Por qué utilizar Java actualmente?",
+      "link": "https://www.youtube.com/watch?v=3kNuK-XAHEY&t=3s",
+      "thumbnail": "https://img.youtube.com/vi/3kNuK-XAHEY/sddefault.jpg",
+      "category": "Backend",
+      "description": "Java es una de las más conocidas tecnologías y se utiliza en millones de aplicaciones de software en todo el mundo. En este video, hablaremos de lo último en el lenguaje y la plataforma Java y de por qué debería ser tu elección para un próximo proyecto.\n",
+      "id": 11
+    },
+    {
+      "title": "Back End",
+      "link": "https://www.youtube.com/watch?v=Z024LSCMqFk",
+      "thumbnail": "https://img.youtube.com/vi/Z024LSCMqFk/sddefault.jpg",
+      "category": "Backend",
+      "description": "¿Quieres saber más?",
+      "id": 12
+    }
+  ]
+}

@@ -1,38 +1,238 @@
-.App {
-  text-align: center;
+#root {
+    background: #161616;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+header {
+    width: 100%;
+    background: #000;
+    border-bottom: 2px solid #257BE5;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+header nav {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+header nav img {
+    width: 6rem;
 }
 
-.App-link {
-  color: #61dafb;
+header nav .buttonLink {
+    padding: .6rem 1rem;
+    border: 1px solid #fff;
+    background-color: transparent;
+    color: #fff;
+    font-size: 0.8rem;
+    font-weight: 400;
+    border-radius: .2rem;
+    font-weight: bold;
+    text-decoration: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+header nav .buttonLink:hover {
+    cursor: pointer;
+    background-color: #fff;
+    color: #000;
+    transition: .3s;
+}
+
+.banner_overlay {
+    width: 100%;
+    height: 25rem;
+    position: relative;
+    background-image: url("./img/banner.png");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    text-align: center;
+    color: #fff;
+}
+
+.overlay {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 18, 51, 0.56);
+    position: absolute;
+    top: 0;
+}
+
+.banner_video {
+    width: 14rem;
+    height: 8rem;
+    z-index: 1;
+    background-size: cover;
+}
+
+.banner_desc .title_category {
+    inline-size: max-content;
+    margin: 1.4rem auto 0;
+    padding: .5rem 1rem;
+    background: #6BD1FF;
+    font-size: 1.5rem;
+    color: #fff;
+    border-radius: .2rem;
+}
+
+.banner_desc h4,
+.banner_desc p {
+    margin: .8rem 0;
+}
+
+.banner_desc h4 {
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.banner_desc p {
+    width: 80%;
+    margin: 0 auto;
+    font-size: .8rem;
+    font-weight: 300;
+    opacity: .8;
+}
+
+.banner_desc {
+    z-index: 1;
+}
+
+.slider {
+    margin-top: 1rem;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 2rem;
+}
+
+.container_slider {
+    width: 40rem;
+    padding: 0 1.3rem;
+}
+
+.container_slider .video {
+    width: 8rem;
+    height: 5rem;
+    background-size: cover;
+}
+
+.category_title {
+    margin: 1rem 1.3rem 0;
+    inline-size: max-content;
+    text-align: center;
+    font-size: 1rem;
+    background: #00C86F;
+    color: #fff;
+    padding: .6rem;
+}
+
+
+@media (min-width:767px) {
+    header nav {
+        width: 95%;
+    }
+
+    .banner_overlay {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .banner_video {
+        width: 20rem;
+        height: 10rem;
+        order: 1;
+        margin-right: 1.2rem;
+    }
+
+    .banner_desc .title_category {
+        width: 40%;
+        margin: 0;
+    }
+
+    .banner_desc h4,
+    .banner_desc p {
+        text-align: left;
+    }
+
+    .banner_desc h4 {
+        font-size: 1.2rem;
+    }
+
+    .banner_desc p {
+        width: 90%;
+        margin: 0;
+        font-size: .8rem;
+    }
+
+    .banner_desc {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        margin-left: 1.2rem;
+    }
+
+    .container_slider {
+        width: 70rem;
+    }
+
+    .container_slider .video {
+        width: 16rem;
+        height: 8rem;
+    }
+
+}
+
+@media (min-width:989px) {
+    header nav .buttonLink {
+        padding: .8rem 2rem;
+        font-size: .8rem;
+    }
+
+    .banner_overlay {
+        height: 37rem;
+    }
+
+    .banner_video {
+        width: 32rem;
+        height: 16.8rem;
+        margin-right: 2rem;
+    }
+
+    .banner_desc .title_category {
+        width: 35%;
+        margin: 0;
+        font-size: 2rem;
+    }
+
+    .banner_desc h4 {
+        margin: 2rem 0 .4rem;
+        font-size: 1.6rem;
+    }
+
+    .banner_desc p {
+        width: 100%;
+        font-size: 1.2rem;
+    }
+
+    .banner_desc {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        margin-left: 2rem;
+    }
+
+    .container_slider {
+        width: 90rem;
+    }
+
+    .container_slider .video {
+        width: 18rem;
+        height: 11rem;
+    }
 }
