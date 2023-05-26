@@ -1,9 +1,35 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { Table, Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 const NewCategoryForm = ({ handleCategorySave }) => {
   const [name, setName] = useState("");
   const [color, setColor] = useState("#000");
+  const [videos, setVideos] = useState([]);
+  const [categories, setCategories] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:3000/videos")
+      .then((response) => {
+        setVideos(response.data);
+      })
+      .catch((error) => {
+        console.error("Error al obtener los videos:", error);
+      });
+  }, []);
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:4000/categories")
+      .then((response) => {
+        setCategories(response.data);
+      })
+      .catch((error) => {
+        console.error("Error al obtener las categorías:", error);
+      });
+  }, []);
 
   const handleNameChange = (event) => {
     setName(event.target.value);
@@ -19,14 +45,14 @@ const NewCategoryForm = ({ handleCategorySave }) => {
     const categoryData = {
       name: name,
       color: color,
+      videos: videos,
     };
 
     axios
       .post("http://localhost:4000/categories", categoryData)
       .then((response) => {
-        setName("");
-        setColor("");
         handleCategorySave({ ...response.data, color: color });
+        window.location.href = "/";
       })
       .catch((error) => {
         console.error("Error al guardar la categoría:", error);
@@ -36,6 +62,39 @@ const NewCategoryForm = ({ handleCategorySave }) => {
   const handleClear = () => {
     setName("");
     setColor("");
+  };
+
+  const handleVideoEdit = (videoId) => {
+    window.location.href = `/nuevo-video/${videoId}`;
+  };
+
+  const handleVideoDelete = (videoId) => {
+    axios
+      .delete(`http://localhost:3000/videos/${videoId}`)
+      .then((response) => {
+        const updatedVideos = videos.filter((video) => video.id !== videoId);
+        setVideos(updatedVideos);
+      })
+      .catch((error) => {
+        console.error("Error al eliminar el video:", error);
+      });
+  };
+  const handleCategoryEdit = (categoryId) => {
+    window.location.href = `/editar-categoria/${categoryId}`;
+  };
+
+  const handleCategoryDelete = (categoryId) => {
+    axios
+      .delete(`http://localhost:4000/categories/${categoryId}`)
+      .then((response) => {
+        const updatedCategories = categories.filter(
+          (category) => category.id !== categoryId
+        );
+        setCategories(updatedCategories);
+      })
+      .catch((error) => {
+        console.error("Error al eliminar la categoría:", error);
+      });
   };
 
   return (
@@ -79,6 +138,87 @@ const NewCategoryForm = ({ handleCategorySave }) => {
           Limpiar
         </button>
       </form>
+
+      <h2 className="mt-4 text-white">Videos</h2>
+      <Table striped bordered hover>
+        <thead>
+          <tr>
+            <th className="text-white">Nombre</th>
+            <th className="text-white">Editar</th>
+            <th className="text-white">Eliminar</th>
+          </tr>
+        </thead>
+        <tbody>
+          {videos.map((video) => (
+            <tr key={video.id}>
+              <td className="text-white">{video.title}</td>
+              <td>
+                <Link
+                  to={`/nuevo-video/${video.id}`}
+                  type="button"
+                  className="btn btn-secondary"
+                  onClick={() => handleVideoEdit(video.id)}
+                >
+                  Editar
+                </Link>
+              </td>
+              <td>
+                <Button
+                  variant="danger"
+                  onClick={() => handleVideoDelete(video.id)}
+                >
+                  Eliminar
+                </Button>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </Table>
+      <h2 className="mt-4 text-white">Categorías</h2>
+      <Table striped bordered hover>
+        <thead>
+          <tr>
+            <th className="text-white">Nombre</th>
+            <th className="text-white">Color</th>
+            <th className="text-white">Editar</th>
+            <th className="text-white">Eliminar</th>
+          </tr>
+        </thead>
+        <tbody>
+          {categories.map((category) => (
+            <tr key={category.id}>
+              <td className="text-white">{category.name}</td>
+              <td>
+                <div
+                  style={{
+                    backgroundColor: category.color,
+                    width: "50px",
+                    height: "30px",
+                  }}
+                ></div>
+              </td>
+              <td>
+                <Link
+                  to={`/editar-categoria/${category.id}`}
+                  type="button"
+                  className="btn btn-secondary"
+                  onClick={() => handleCategoryEdit(category.id)}
+                >
+                  Editar
+                </Link>
+              </td>
+              <td>
+                <Button
+                  variant="danger"
+                  onClick={() => handleCategoryDelete(category.id)}
+                >
+                  Eliminar
+                </Button>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </Table>
     </div>
   );
 };

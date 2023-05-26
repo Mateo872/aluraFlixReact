@@ -1,9 +1,9 @@
 {
   "categories": [
     {
-      "id": 1,
       "name": "Data Science",
-      "color": "#ffa850"
+      "color": "#19942e",
+      "id": 1
     }
   ]
 }

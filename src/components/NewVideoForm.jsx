@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 const NewVideoForm = () => {
   const [title, setTitle] = useState("");
@@ -8,19 +8,36 @@ const NewVideoForm = () => {
   const [thumbnail, setThumbnail] = useState("");
   const [category, setCategory] = useState("");
   const [description, setDescription] = useState("");
-  const [categories, setCategories] = useState([]); // Estado para almacenar todas las categorías
-  const [errorMessage, setErrorMessage] = useState(""); // Estado para almacenar el mensaje de error
+  const [categories, setCategories] = useState([]);
+
+  const { id } = useParams();
 
   useEffect(() => {
     axios
       .get("http://localhost:4000/categories")
       .then((response) => {
-        setCategories(response.data); // Almacenar las categorías en el estado
+        setCategories(response.data);
       })
       .catch((error) => {
         console.error("Error al obtener las categorías:", error);
       });
-  }, []);
+
+    if (id) {
+      axios
+        .get(`http://localhost:3000/videos/${id}`)
+        .then((response) => {
+          const videoData = response.data;
+          setTitle(videoData.title);
+          setLink(videoData.link);
+          setThumbnail(videoData.thumbnail);
+          setCategory(videoData.category);
+          setDescription(videoData.description);
+        })
+        .catch((error) => {
+          console.error("Error al obtener los datos del video:", error);
+        });
+    }
+  }, [id]);
 
   const handleTitleChange = (event) => {
     setTitle(event.target.value);
@@ -42,20 +59,8 @@ const NewVideoForm = () => {
     setDescription(event.target.value);
   };
 
-  const validateForm = () => {
-    if (!title || !link || !thumbnail || !category || !description) {
-      setErrorMessage("Por favor, complete todos los campos.");
-      return false;
-    }
-    return true;
-  };
-
   const handleSubmit = (event) => {
     event.preventDefault();
-
-    if (!validateForm()) {
-      return;
-    }
 
     const videoData = {
       title: title,
@@ -65,20 +70,25 @@ const NewVideoForm = () => {
       description: description,
     };
 
-    axios
-      .post("http://localhost:3000/videos", videoData)
-      .then((response) => {
-        console.log("Video guardado:", response.data);
-        setTitle("");
-        setLink("");
-        setThumbnail("");
-        setCategory("");
-        setDescription("");
-        setErrorMessage(""); // Limpiar el mensaje de error
-      })
-      .catch((error) => {
-        console.error("Error al guardar el video:", error);
-      });
+    if (id) {
+      axios
+        .put(`http://localhost:3000/videos/${id}`, videoData)
+        .then((response) => {
+          window.location.href = "/";
+        })
+        .catch((error) => {
+          console.error("Error al actualizar el video:", error);
+        });
+    } else {
+      axios
+        .post("http://localhost:3000/videos", videoData)
+        .then((response) => {
+          window.location.href = "/";
+        })
+        .catch((error) => {
+          console.error("Error al guardar el video:", error);
+        });
+    }
   };
 
   const handleClear = () => {
@@ -87,17 +97,11 @@ const NewVideoForm = () => {
     setThumbnail("");
     setCategory("");
     setDescription("");
-    setErrorMessage("");
   };
 
   return (
     <div className="container">
       <h1 className="mb-4 text-white">Nuevo video</h1>
-      {errorMessage && (
-        <div className="alert alert-danger" role="alert">
-          {errorMessage}
-        </div>
-      )}
       <form onSubmit={handleSubmit}>
         <div className="mb-3">
           <label htmlFor="title" className="form-label text-white">

@@ -130,6 +130,10 @@ header nav .buttonLink:hover {
     padding: .6rem;
 }
 
+.container_edit {
+    padding: 8rem 4rem;
+}
+
 
 @media (min-width:767px) {
     header nav {
@@ -185,6 +189,9 @@ header nav .buttonLink:hover {
         height: 8rem;
     }
 
+    .container_edit {
+        padding: 18rem 4rem;
+    }
 }
 
 @media (min-width:989px) {
@@ -234,5 +241,9 @@ header nav .buttonLink:hover {
     .container_slider .video {
         width: 18rem;
         height: 11rem;
+    }
+
+    .container_edit {
+        padding: 6rem;
     }
 }

@@ -1,70 +1,49 @@
-# Getting Started with Create React App
+# Proyecto de Plataforma de Streaming con React
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Bienvenido al proyecto de una aplicación web de una plataforma de streaming, desarrollada con React. Este proyecto tiene como objetivo proporcionar una plataforma donde los usuarios puedan acceder a una variedad de contenido.
 
-## Available Scripts
+## Descripción
 
-In the project directory, you can run:
+La aplicación web de la plataforma de streaming está diseñada para ofrecer una experiencia de usuario intuitiva y atractiva. Los usuarios podrán explorar y descubrir contenido multimedia y disfrutar del contenido en diferentes dispositivos.
 
-### `npm start`
+La aplicación se ha desarrollado utilizando las siguientes tecnologías principales:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **React**: Se utilizó React como biblioteca de JavaScript para construir la interfaz de usuario de manera eficiente y modular. React proporciona componentes reutilizables y un enfoque basado en el estado, lo que facilita el desarrollo y el mantenimiento del proyecto.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **Axios**: Axios es una biblioteca de JavaScript utilizada para realizar solicitudes HTTP desde el cliente a un servidor. Se utilizó Axios para manejar las solicitudes de CRUD (crear, leer, actualizar y eliminar) a la API del servidor.
 
-### `npm test`
+- **JSON-Server**: JSON-Server es una herramienta que permite crear rápidamente un servidor RESTful basado en archivos JSON. Se utilizó para simular el backend de la aplicación y proporcionar una API para realizar operaciones CRUD en los datos.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Características principales
 
-### `npm run build`
+El proyecto de la plataforma de streaming con React ofrece las siguientes características clave:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **Explorar contenido**: Los usuarios pueden navegar y descubrir una amplia variedad de videos.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- **Operaciones CRUD**: Se proporcionan funcionalidades completas de CRUD (crear, leer, actualizar y eliminar) para administrar el contenido, permitiendo a los administradores agregar, editar y eliminar videos.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Configuración del proyecto
 
-### `npm run eject`
+Sigue estos pasos para configurar el proyecto en tu entorno local:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+1. Clona este repositorio en tu máquina local utilizando el siguiente comando:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+git clone https://github.com/Mateo872/aluraFlixReact
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+2. Accede al directorio del proyecto:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+cd nombre-repositorio
 
-## Learn More
+3. Instala las dependencias del proyecto ejecutando el siguiente comando:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+npm install
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+4. Inicia el servidor JSON-Server para simular la API ejecutando el siguiente comando:
 
-### Code Splitting
+npm run server
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+5. En otra terminal, inicia la aplicación React ejecutando el siguiente comando:
 
-### Analyzing the Bundle Size
+npm start
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+6. Abre tu navegador web y visita la siguiente URL: `https://mateo872.github.io/aluraFlixReact/`

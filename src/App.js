@@ -10,6 +10,7 @@ import Category from "./components/Category";
 import NewVideoForm from "./components/NewVideoForm";
 import "bootstrap/dist/css/bootstrap.min.css";
 import NewCategoryForm from "./components/NewCategoryForm";
+import EditCategoryForm from "./components/EditCategoryForm";
 
 const App = () => {
   const [videosData, setVideosData] = useState([]);
@@ -47,11 +48,11 @@ const App = () => {
   };
 
   const handleCategorySave = (category) => {
+    const { color, ...categoryData } = category;
     axios
-      .post("http://localhost:4000/categories", category)
+      .post("http://localhost:4000/categories", categoryData)
       .then((response) => {
-        console.log("Categoría guardada:", response.data);
-        const updatedCategory = { ...response.data, color: category.color }; // Incluye el color de la categoría
+        const updatedCategory = { ...response.data, color };
         setCategories((prevCategories) => [...prevCategories, updatedCategory]);
       })
       .catch((error) => {
@@ -86,6 +87,24 @@ const App = () => {
         <Route
           path="/nueva-categoria"
           element={<NewCategoryForm handleCategorySave={handleCategorySave} />}
+        />
+        <Route
+          path="/nuevo-video/:id?"
+          element={
+            <NewVideoForm
+              categories={categories}
+              setVideosData={setVideosData}
+            />
+          }
+        />
+        <Route
+          path="/editar-categoria/:id"
+          element={
+            <EditCategoryForm
+              categories={categories}
+              handleCategorySave={handleCategorySave}
+            />
+          }
         />
       </Routes>
 
